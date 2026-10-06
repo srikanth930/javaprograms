@@ -1,0 +1,54 @@
+class MorningThread extends Thread {
+    public void run() {
+        try {
+            while (true) {
+                System.out.println("Good Morning");
+                Thread.sleep(1000); // 1 second
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+    }
+}
+
+// Thread to display "Hello" every 2 seconds
+class HelloThread extends Thread {
+    public void run() {
+        try {
+            while (true) {
+                System.out.println("Hello");
+                Thread.sleep(2000); // 2 seconds
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+    }
+}
+
+// Thread to display "Welcome" every 3 seconds
+class WelcomeThread extends Thread {
+    public void run() {
+        try {
+            while (true) {
+                System.out.println("Welcome");
+                Thread.sleep(3000); // 3 seconds
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+    }
+}
+
+public class ThreadExtensionDemo {
+    public static void main(String[] args) {
+        // Creating thread instances
+        MorningThread t1 = new MorningThread();
+        HelloThread t2 = new HelloThread();
+        WelcomeThread t3 = new WelcomeThread();
+
+        // Starting the threads
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
